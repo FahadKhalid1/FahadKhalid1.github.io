@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Fahad Khalid | AI Research Scientist</title>
+  <meta
+    name="description"
+    content="Dr. Fahad Khalid is an AI Research Scientist specializing in computer vision, NLP, medical imaging, radiomics, and applied AI systems."
+  />
+  <style>
+    :root {
+      --bg: #f6f2eb;
+      --bg-2: #efe8dd;
+      --surface: rgba(255, 255, 255, 0.76);
+      --surface-strong: #ffffff;
+      --text: #171717;
+      --muted: #635d55;
+      --line: rgba(23, 23, 23, 0.08);
+      --accent: #111111;
+      --accent-soft: #ece3d6;
+      --gold: #b48a4a;
+      --shadow: 0 18px 60px rgba(18, 18, 18, 0.08);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --max: 1220px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
+        Inter, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, #fff8ee 0%, transparent 28%),
+        radial-gradient(circle at top right, #f2ece3 0%, transparent 28%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(246, 242, 235, 0.75);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(23, 23, 23, 0.05);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand strong {
+      font-size: 1.02rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brand span {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.96rem;
+      font-weight: 500;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff !important;
+      font-weight: 600 !important;
+    }
+
+    .hero {
+      padding: 54px 0 28px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.85fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.7);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 48px;
+      border-radius: 36px;
+      min-height: 620px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.84rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 38px;
+      height: 1px;
+      background: rgba(23, 23, 23, 0.28);
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+      line-height: 0.96;
+      letter-spacing: -0.055em;
+      max-width: 10ch;
+    }
+
+    .hero-subtitle {
+      margin: 0 0 18px;
+      font-size: clamp(1.15rem, 2vw, 1.55rem);
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: #4f4942;
+      max-width: 62ch;
+      margin: 0 0 26px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(23,23,23,0.07);
+      color: #413c35;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-size: 0.96rem;
+      font-weight: 600;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-dark {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-light {
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .meta-box {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(23,23,23,0.06);
+    }
+
+    .meta-box strong {
+      display: block;
+      font-size: 1.4rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 4px;
+    }
+
+    .meta-box span {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .hero-side {
+      padding: 20px;
+      border-radius: 36px;
+      min-height: 620px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      justify-content: space-between;
+    }
+
+    .photo-frame {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      min-height: 430px;
+      background: linear-gradient(180deg, #d9d1c5, #f1ebe2);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-placeholder {
+      position: absolute;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      color: rgba(23,23,23,0.5);
+      font-weight: 500;
+    }
+
+    .mini-card {
+      padding: 22px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(23,23,23,0.06);
+    }
+
+    .mini-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.04rem;
+      letter-spacing: -0.02em;
+    }
+
+    .mini-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    section {
+      padding: 26px 0;
+    }
+
+    .section-card {
+      padding: 34px;
+      border-radius: 32px;
+    }
+
+    .section-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .section-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+    }
+
+    .section-intro {
+      margin: 0;
+      max-width: 58ch;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+    }
+
+    .panel {
+      border-radius: 22px;
+      background: rgba(255,255,255,0.64);
+      border: 1px solid rgba(23,23,23,0.06);
+      padding: 24px;
+    }
+
+    .panel p {
+      margin: 0;
+      color: #4f4942;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-line strong {
+      display: inline-block;
+      min-width: 90px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(23,23,23,0.06);
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 2rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .pill-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .pill {
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.74);
+      border: 1px solid rgba(23,23,23,0.07);
+      font-size: 0.95rem;
+      color: #37322d;
+      font-weight: 500;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .expert-card,
+    .publication-item,
+    .reference-item {
+      padding: 24px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.68);
+      border: 1px solid rgba(23,23,23,0.06);
+    }
+
+    .expert-card h3,
+    .publication-item h3,
+    .reference-item h3 {
+      margin: 0 0 10px;
+      font-size: 1.18rem;
+      letter-spacing: -0.03em;
+    }
+
+    .expert-card p,
+    .publication-item p,
+    .reference-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .experience-item {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 20px;
+      padding: 20px 0;
+      border-top: 1px solid rgba(23,23,23,0.08);
+    }
+
+    .experience-item:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .experience-date {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .experience-content h3 {
+      margin: 0 0 4px;
+      font-size: 1.16rem;
+      letter-spacing: -0.03em;
+    }
+
+    .experience-content h4 {
+      margin: 0 0 10px;
+      color: var(--gold);
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .experience-content ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .experience-content li + li {
+      margin-top: 6px;
+    }
+
+    .publication-list,
+    .reference-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .publication-authors {
+      margin-top: 6px !important;
+      font-size: 0.95rem !important;
+    }
+
+    .publication-journal {
+      margin-top: 8px !important;
+      color: #403b35 !important;
+      font-weight: 600;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .contact-panel {
+      padding: 26px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.68);
+      border: 1px solid rgba(23,23,23,0.06);
+    }
+
+    .contact-panel h3 {
+      margin: 0 0 14px;
+      font-size: 1.15rem;
+      letter-spacing: -0.03em;
+    }
+
+    .contact-panel p {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .contact-panel ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-panel li {
+      color: #4f4942;
+      word-break: break-word;
+    }
+
+    .footer {
+      padding: 26px 0 42px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy,
+      .hero-side {
+        min-height: auto;
+      }
+
+      .hero-meta,
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        min-height: auto;
+        padding: 16px 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-copy,
+      .hero-side,
+      .section-card {
+        padding: 24px;
+        border-radius: 24px;
+      }
+
+      .hero-meta,
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .section-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      h1 {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <strong>Dr. Fahad Khalid</strong>
+        <span>AI Research Scientist</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy card reveal">
+          <div>
+            <span class="eyebrow">Applied Artificial Intelligence</span>
+            <h1>Dr. Fahad Khalid</h1>
+            <p class="hero-subtitle">AI Research Scientist & ML/DL Engineer</p>
+            <p class="lead">
+              AI Research Scientist and ML/DL engineer specializing in computer vision,
+              NLP, radiomics, medical imaging, and end-to-end AI systems. Experienced in
+              translating advanced research into production-ready solutions across healthcare,
+              industrial AI, and intelligent automation.
+            </p>
+
+            <div class="badge-row">
+              <span class="badge">1st Place · MICCAI HECKTOR 2022</span>
+              <span class="badge">Erasmus Mundus Scholar</span>
+              <span class="badge">Medical Imaging & Applied AI</span>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn btn-dark" href="#publications">View Publications</a>
+              <a class="btn btn-light" href="#contact">Get In Touch</a>
+            </div>
+          </div>
+
+          <div class="hero-meta">
+            <div class="meta-box">
+              <strong>8+</strong>
+              <span>Publications</span>
+            </div>
+            <div class="meta-box">
+              <strong>5+</strong>
+              <span>Years Experience</span>
+            </div>
+            <div class="meta-box">
+              <strong>15+</strong>
+              <span>Projects Completed</span>
+            </div>
+            <div class="meta-box">
+              <strong>3</strong>
+              <span>Countries Worked In</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-side card reveal">
+          <div class="photo-frame">
+            <img
+              src="profile.jpg"
+              alt="Portrait of Dr. Fahad Khalid"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="photo-placeholder">
+              Add your portrait here as <strong style="margin-left:6px;">profile.jpg</strong>
+            </div>
+          </div>
+
+          <div class="mini-card">
+            <h3>Current Focus</h3>
+            <p>
+              Leading industrial AI work spanning LLM-powered systems, computer vision,
+              synthetic data generation, multimodal AI, and cloud deployment.
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h3>Research Themes</h3>
+            <p>
+              Computer vision, medical image analysis, radiomics, multimodal learning,
+              NLP/LLMs, and applied AI for healthcare and enterprise systems.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-card card reveal">
+          <div class="section-top">
+            <div>
+              <span class="section-label">About</span>
+              <h2>Research-led AI, delivered with applied impact.</h2>
+            </div>
+            <p class="section-intro">
+              A polished profile combining scientific depth, deployment experience,
+              and strong domain expertise in medical and industrial AI.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="panel">
+              <p>
+                I am an AI Research Scientist and ML/DL engineer with a strong background in
+                computer vision, natural language processing, and medical data and image analysis.
+                My work spans the full AI lifecycle: research design, data pipelines, model
+                development, evaluation, deployment, and integration into usable systems.
+                I have built high-performance chatbots and RAG-style workflows, radiomics-based
+                prediction models, and computer vision systems for detection, tracking,
+                classification, segmentation, and synthetic data generation.
+              </p>
+              <br />
+              <p>
+                I currently work on industrial AI initiatives at Expleo, where I combine LLMs,
+                computer vision, multimodal pipelines, simulation, and deployment practices across
+                Azure, GCP, Docker, Git, and CI/CD. My longer-term focus is on impactful applied
+                AI in healthcare, autonomous systems, and enterprise-grade intelligent solutions.
+              </p>
+            </div>
+
+            <div class="panel">
+              <div class="contact-list">
+                <div class="contact-line"><strong>Email:</strong> <a href="mailto:catchfahad92@gmail.com">catchfahad92@gmail.com</a></div>
+                <div class="contact-line"><strong>Phone:</strong> <a href="tel:+33618061568">(+33) 618 061 568</a></div>
+                <div class="contact-line"><strong>Location:</strong> Paris, France</div>
+                <div class="contact-line"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/fahad-khalid-ph-d-a89302141/" target="_blank">fahad-khalid-ph-d</a></div>
+                <div class="contact-line"><strong>Scholar:</strong> <a href="https://scholar.google.com/citations?user=k5Qkj6IAAAAJhl=en" target="_blank">Google Scholar Profile</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat">
+              <strong>CV</strong>
+              <span>Computer Vision</span>
+            </div>
+            <div class="stat">
+              <strong>NLP</strong>
+              <span>LLMs & Prompting</span>
+            </div>
+            <div class="stat">
+              <strong>MedAI</strong>
+              <span>Imaging & Radiomics</span>
+            </div>
+            <div class="stat">
+              <strong>MLOps</strong>
+              <span>Deployment & Cloud</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="expertise">
+      <div class="container">
+        <div class="section-card card reveal">
+          <div class="section-top">
+            <div>
+              <span class="section-label">Expertise</span>
+              <h2>Technical strengths across research and production.</h2>
+            </div>
+            <p class="section-intro">
+              Core domains spanning scientific imaging, multimodal AI, large language models,
+              and scalable deployment.
+            </p>
+          </div>
+
+          <div class="pill-grid" style="margin-bottom: 22px;">
+            <span class="pill">Computer Vision</span>
+            <span class="pill">Medical Image Analysis</span>
+            <span class="pill">Deep Learning</span>
+            <span class="pill">NLP & LLMs</span>
+            <span class="pill">Radiomics</span>
+            <span class="pill">Synthetic Data</span>
+            <span class="pill">PyTorch</span>
+            <span class="pill">MONAI</span>
+            <span class="pill">PyRadiomics</span>
+            <span class="pill">scikit-learn</span>
+            <span class="pill">Azure / GCP</span>
+            <span class="pill">Docker & CI/CD</span>
+          </div>
+
+          <div class="cards-grid">
+            <div class="expert-card">
+              <h3>Computer Vision & Imaging</h3>
+              <p>
+                Object detection, tracking, segmentation, classification, 3D modeling,
+                simulation, radiomics, and multimodal medical imaging pipelines.
+              </p>
+            </div>
+
+            <div class="expert-card">
+              <h3>NLP, LLMs & Intelligent Automation</h3>
+              <p>
+                Chatbots, prompt engineering, retrieval-oriented workflows, and practical
+                natural language systems for enterprise use cases.
+              </p>
+            </div>
+
+            <div class="expert-card">
+              <h3>Medical AI & Research Translation</h3>
+              <p>
+                Mutation prediction, prognosis modeling, harmonization across scanners,
+                and clinically meaningful image-based AI workflows.
+              </p>
+            </div>
+
+            <div class="expert-card">
+              <h3>Deployment & Applied AI Systems</h3>
+              <p>
+                Cloud deployment, containerization, CI/CD, reproducible pipelines, and
+                production-oriented AI delivery for industrial environments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-card card reveal">
+          <div class="section-top">
+            <div>
+              <span class="section-label">Experience</span>
+              <h2>Professional and academic trajectory.</h2>
+            </div>
+            <p class="section-intro">
+              Experience spanning industrial AI, neuro-oncology research, medical imaging,
+              and large-scale clinical data analysis.
+            </p>
+          </div>
+
+          <div class="experience-list">
+            <div class="experience-item">
+              <div class="experience-date">Jan 2024 — Present</div>
+              <div class="experience-content">
+                <h3>Data Scientist</h3>
+                <h4>Expleo · Paris, France</h4>
+                <ul>
+                  <li>Develop ML/DL pipelines for object detection, tracking, dataset generation, classification, and segmentation.</li>
+                  <li>Build chatbots using LLMs, Azure OpenAI, NLP, and prompt engineering for intelligent automation.</li>
+                  <li>Deploy scalable AI solutions in Azure and GCP using Docker, Git, and CI/CD.</li>
+                  <li>Create 3D modeling and simulation tools to support synthetic data generation and model training.</li>
+                  <li>Develop multimodal AI-driven control systems simulating train operations.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="experience-item">
+              <div class="experience-date">2020 — 2023</div>
+              <div class="experience-content">
+                <h3>Ph.D. in AI for Neuro-oncology</h3>
+                <h4>Paris-Saclay · Orsay, France</h4>
+                <ul>
+                  <li>Developed machine learning and computer vision models for radiomic-based mutation prediction and patient prognosis.</li>
+                  <li>Built multimodal medical imaging pipelines combining clinical and MRI data for end-to-end analysis.</li>
+                  <li>Worked with PyRadiomics, scikit-learn, PyTorch, SimpleITK, and MONAI.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="experience-item">
+              <div class="experience-date">2019 — 2020</div>
+              <div class="experience-content">
+                <h3>Medical Data Analyst Researcher</h3>
+                <h4>Institut Curie / INSERM</h4>
+                <ul>
+                  <li>Developed ML and DL methods for medical image analysis, pixel tracking, and paralysis prediction.</li>
+                  <li>Created machine-readable medical images from raw vocal fold paralysis ultrasound scans and videos.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="experience-item">
+              <div class="experience-date">Earlier Role</div>
+              <div class="experience-content">
+                <h3>Research Scientist</h3>
+                <h4>Radboud University · Netherlands</h4>
+                <ul>
+                  <li>Designed a non-invasive replacement for early diagnosis of fibrotic lung diseases using a novel 3D convolutional network.</li>
+                  <li>Worked with thoracic CT scans from 200,000 participants.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container">
+        <div class="section-card card reveal">
+          <div class="section-top">
+            <div>
+              <span class="section-label">Publications</span>
+              <h2>Selected peer-reviewed papers and conference proceedings.</h2>
+            </div>
+            <p class="section-intro">
+              Publication list adapted from the material you provided, including journal articles,
+              conference proceedings, and research presentations. 
+            </p>
+          </div>
+
+          <div class="publication-list">
+            <article class="publication-item">
+              <h3>Multimodal MRI radiomic models to predict genomic mutations in diffuse intrinsic pontine glioma with missing imaging modalities</h3>
+              <p class="publication-authors"><strong>F Khalid</strong>, J Goya-Outi, T Escobar, V Dangouloff-Ros, A Grigis, C Philippe, N Boddaert, J Grill, V Frouin, F Frouin</p>
+              <p class="publication-journal">Frontiers in Medicine · Vol. 10 · 2023</p>
+            </article>
+
+            <article class="publication-item">
+              <h3>A radiomics pipeline dedicated to Breast MRI: validation on a multicenter phantom study</h3>
+              <p class="publication-authors">MJ Saint Martin, F Orlhac, P Akl, <strong>F Khalid</strong>, C Nioche, I Buvat, C Malhaire, F Frouin</p>
+              <p class="publication-journal">MAGMA · 2021; 34(3):355–366</p>
+            </article>
+
+            <article class="publication-item">
+              <h3>Impact of ComBat and a Multi-Model approach to deal with multi-scanner and missing MRI data in a small cohort study</h3>
+              <p class="publication-authors"><strong>F Khalid</strong>, J Goya Outi, V Frouin, N Boddaert, J Grill, F Frouin</p>
+              <p class="publication-journal">IEEE Engineering in Medicine and Biology Society Proceedings · 2021</p>
+            </article>
+
+            <article class="publication-item">
+              <h3>Simplicity Is All You Need: Out-of-the-Box nnUNet Followed by Binary-Weighted Radiomic Model for Segmentation and Outcome Prediction in Head and Neck PET/CT</h3>
+              <p class="publication-authors">L Rebaud, T Escobar, <strong>F Khalid</strong>, K Girum, I Buvat</p>
+              <p class="publication-journal">HECKTOR 2022 · Lecture Notes in Computer Science · Springer</p>
+            </article>
+
+            <article class="publication-item">
+              <h3>Multi-site / multi-scanner harmonization for DIPG radiomic studies using ComBat</h3>
+              <p class="publication-authors">F Frouin, <strong>F Khalid</strong></p>
+              <p class="publication-journal">SIOPE Brain Tumour Group – Imaging Group Virtual Meeting · 2020</p>
+            </article>
+
+            <article class="publication-item">
+              <h3>A correction of MR field non-uniformity dedicated to breast imaging</h3>
+              <p class="publication-authors"><strong>F Khalid</strong>, P Akl, D Sebbag-Sfez, C Malhaire, F Frouin</p>
+              <p class="publication-journal">Insights into Imaging / European Congress of Radiology · 2020</p>
+            </article>
+
+            <article class="publication-item">
+              <h3>MRI-based radiomics for predicting TP53 mutation in diffuse intrinsic pontine glioma</h3>
+              <p class="publication-authors"><strong>F Khalid</strong>, V Frouin, N Boddaert, J Grill, F Frouin</p>
+              <p class="publication-journal">RITS Conference · Brest · 2022</p>
+            </article>
+
+            <article class="publication-item">
+              <h3>Artificial intelligence for detecting ACVR1 mutations in patients with DIPG using MRI and clinical data</h3>
+              <p class="publication-authors"><strong>F Khalid</strong>, T Escobar, J Goya-Outi, V Frouin, N Boddaert, J Grill, F Frouin</p>
+              <p class="publication-journal">Neuro-Oncology · ISPNO Conference Poster · 2022</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="references">
+      <div class="container">
+        <div class="section-card card reveal">
+          <div class="section-top">
+            <div>
+              <span class="section-label">References</span>
+              <h2>Academic references.</h2>
+            </div>
+            <p class="section-intro">
+              Professional and academic contacts as provided in your original portfolio text.
+            </p>
+          </div>
+
+          <div class="reference-list">
+            <article class="reference-item">
+              <h3>Dr. Alain Lalande</h3>
+              <p>MCU - Praticien Hospitalier - HDR</p>
+              <p>Le2I - Laboratoire de Biophysique, University of Burgundy, France</p>
+              <p>Work: +33 (0)3 80 39 33 91</p>
+              <p>Email: Alain.Lalande@u-bourgogne.fr</p>
+            </article>
+
+            <article class="reference-item">
+              <h3>Dr. Frederique Frouin</h3>
+              <p>INSERM-Institut Curie, LITO Laboratory, France</p>
+              <p>Phone: +33(0)6 33 67 79 65</p>
+              <p>Email: frederique.frouin@inserm.fr</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-card card reveal">
+          <div class="section-top">
+            <div>
+              <span class="section-label">Contact</span>
+              <h2>Open to impactful AI opportunities and collaborations.</h2>
+            </div>
+            <p class="section-intro">
+              You can be reached directly for research, applied AI roles, consulting,
+              and collaboration opportunities.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-panel">
+              <h3>Direct Contact</h3>
+              <ul>
+                <li><strong>Email:</strong> <a href="mailto:catchfahad92@gmail.com">catchfahad92@gmail.com</a></li>
+                <li><strong>Phone:</strong> <a href="tel:+33618061568">(+33) 618 061 568</a></li>
+                <li><strong>Address:</strong> 64 Avenue de Wagram, 75017, Paris, France</li>
+              </ul>
+            </div>
+
+            <div class="contact-panel">
+              <h3>Profiles</h3>
+              <ul>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/fahad-khalid-ph-d-a89302141/" target="_blank">linkedin.com/in/fahad-khalid-ph-d-a89302141</a></li>
+                <li><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=k5Qkj6IAAAAJhl=en" target="_blank">scholar.google.com/citations?user=k5Qkj6IAAAAJhl=en</a></li>
+                <li><strong>Focus:</strong> Healthcare AI, industrial AI, multimodal systems, CV and NLP</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 Dr. Fahad Khalid — AI Research Scientist · Computer Vision · Medical Imaging · Applied AI
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
